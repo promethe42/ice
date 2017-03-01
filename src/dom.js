@@ -1,4 +1,5 @@
 (function () {
+	debugger;
   var exports = this,
 		_browser = null,
     dom = {};

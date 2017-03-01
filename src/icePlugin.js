@@ -1,8 +1,10 @@
 (function() {
+	debugger;
 
 var exports = this;
 
 var IcePlugin = function(ice_instance) {
+	debugger;
   this._ice = ice_instance;
 };
 

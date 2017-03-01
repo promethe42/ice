@@ -1,4 +1,5 @@
 (function () {
+	debugger;
 
   var exports = this,
     defaults, InlineChangeEditor;
@@ -110,6 +111,7 @@
      * range, and editor.
      */
     startTracking: function () {
+			debugger;
       this.element.setAttribute('contentEditable', this.contentEditable);
 
       // If we are handling events setup the delegate to handle various events on `this.element`.

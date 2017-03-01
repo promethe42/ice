@@ -1,4 +1,5 @@
 (function () {
+	debugger;
 
   var exports = this,
     Selection;

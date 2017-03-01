@@ -3271,7 +3271,6 @@ if (!('filter' in Array.prototype)) {
 }
 
 (function () {
-	debugger;
 
 	var exports = this,
 		defaults, InlineChangeEditor;
@@ -3383,7 +3382,6 @@ if (!('filter' in Array.prototype)) {
 			 * range, and editor.
 			 */
 			startTracking: function () {
-				debugger;
 				this.element.setAttribute('contentEditable', this.contentEditable);
 
 				// If we are handling events setup the delegate to handle various events on `this.element`.
@@ -3578,6 +3576,7 @@ if (!('filter' in Array.prototype)) {
 			 * is used. If the range is in a parent delete node, then the range is positioned after the delete.
 			 */
 			insert: function (node, range) {
+				debugger;
 				// If the node is not defined, then we need to insert an
 				// invisible space and force propagation to the browser.
 				var isPropagating = !node;
@@ -3622,6 +3621,7 @@ if (!('filter' in Array.prototype)) {
 			 * original delete node is stored.
 			 */
 			placeholdDeletes: function () {
+				debugger;
 				var self = this;
 				if (this.isPlaceholdingDeletes) {
 					this.revertDeletePlaceholders();
@@ -3646,6 +3646,7 @@ if (!('filter' in Array.prototype)) {
 			 * original delete node is stored.
 			 */
 			revertDeletePlaceholders: function () {
+				debugger;
 				var self = this;
 				if (!this.isPlaceholdingDeletes) {
 					return false;
@@ -3664,6 +3665,7 @@ if (!('filter' in Array.prototype)) {
 			 * @return true if deletion was handled.
 			 */
 			deleteContents: function (right, range) {
+				debugger;
 				var prevent = true;
 				var browser = ice.dom.browser();
 
@@ -3785,6 +3787,7 @@ if (!('filter' in Array.prototype)) {
 			 * [changeid] => {`type`, `time`, `userid`, `username`}
 			 */
 			getChanges: function () {
+				debugger;
 				return this._changes;
 			},
 
@@ -3966,6 +3969,7 @@ if (!('filter' in Array.prototype)) {
 			 * void elements.
 			 */
 			_moveRangeToValidTrackingPos: function (range) {
+				debugger;
 				var onEdge = false;
 				var voidEl = this._getVoidElement(range.endContainer);
 				while (voidEl) {
@@ -4963,7 +4967,7 @@ if (!('filter' in Array.prototype)) {
 }).call(this);
 
 (function () {
-	debugger;
+	
   var exports = this,
 		_browser = null,
     dom = {};
@@ -6171,7 +6175,7 @@ if (!('filter' in Array.prototype)) {
 
 }).call(this.ice);
 (function () {
-	debugger;
+	
 
   var exports = this,
     Selection;
@@ -6190,6 +6194,7 @@ if (!('filter' in Array.prototype)) {
      * Returns the selection object for the current browser.
      */
     _getSelection: function () {
+			debugger;
       if (this._selection) {
 		  this._selection.refresh();
 	  }
@@ -6206,6 +6211,7 @@ if (!('filter' in Array.prototype)) {
      * Creates a range object.
      */
     createRange: function () {
+			debugger;
       return rangy.createRange(this.env.document);
     },
 
@@ -6215,6 +6221,7 @@ if (!('filter' in Array.prototype)) {
      * position 0 will be the only allocation filled.
      */
     getRangeAt: function (pos) {
+			debugger;
       this._selection.refresh();
       try {
         return this._selection.getRangeAt(pos);
@@ -6229,6 +6236,7 @@ if (!('filter' in Array.prototype)) {
      * a single range, so the previous range gets evicted.
      */
     addRange: function (range) {
+			debugger;
       this._selection || (this._selection = this._getSelection());
       this._selection.setSingleRange(range);
       this._selection.ranges = [range];
@@ -6239,6 +6247,7 @@ if (!('filter' in Array.prototype)) {
      * Initialize and extend the `rangy` library with some custom functionality.
      */
     _initializeRangeLibrary: function () {
+			debugger;
       var self = this;
 
       rangy.init();
@@ -6270,6 +6279,7 @@ if (!('filter' in Array.prototype)) {
        * number of `units`. Defaults to `CHARACTER_UNIT` and units of 1.
        */
       rangy.rangePrototype.moveStart = function (unitType, units) {
+				debugger;
         move(this, unitType, units, true);
       };
 
@@ -6278,6 +6288,7 @@ if (!('filter' in Array.prototype)) {
        * number of `units`.
        */
       rangy.rangePrototype.moveEnd = function (unitType, units) {
+				debugger;
         move(this, unitType, units, false);
       };
 
@@ -6286,6 +6297,7 @@ if (!('filter' in Array.prototype)) {
        * to the given `container` with `offset` units.
        */
       rangy.rangePrototype.setRange = function (start, container, offset) {
+				debugger;
         if (start) {
           this.setStart(container, offset);
         } else {
@@ -6336,6 +6348,7 @@ if (!('filter' in Array.prototype)) {
        * <p><TEXT>some </TEXT><SPAN>test</SPAN><TEXT> text</TEXT></p>
        */
       rangy.rangePrototype.moveCharLeft = function (moveStart, units) {
+				debugger;
         var container, offset;
 
         if (moveStart) {
@@ -6431,6 +6444,7 @@ if (!('filter' in Array.prototype)) {
        * <p><TEXT>some </TEXT><SPAN>test</SPAN><TEXT> text</TEXT></p>
        */
       rangy.rangePrototype.moveCharRight = function (moveStart, units) {
+				debugger;
         var container, offset;
 
         if (moveStart) {
@@ -6485,6 +6499,7 @@ if (!('filter' in Array.prototype)) {
        * the the container's firstChild is returned.
        */
       rangy.rangePrototype.getNextContainer = function (container, skippedBlockElem) {
+				debugger;
         if (!container) {
           return null;
         }
@@ -6531,6 +6546,7 @@ if (!('filter' in Array.prototype)) {
        * then the container's lastChild is returned.
        */
       rangy.rangePrototype.getPreviousContainer = function (container, skippedBlockElem) {
+				debugger;
         if (!container) {
           return null;
         }
@@ -6575,6 +6591,7 @@ if (!('filter' in Array.prototype)) {
       };
 
       rangy.rangePrototype.getNextTextNode = function (container) {
+				debugger;
         if (container.nodeType === ice.dom.ELEMENT_NODE) {
           if (container.childNodes.length !== 0) {
             return this.getFirstSelectableChild(container);
@@ -6590,6 +6607,7 @@ if (!('filter' in Array.prototype)) {
       };
 
       rangy.rangePrototype.getPreviousTextNode = function (container, skippedBlockEl) {
+				debugger;
         container = this.getPreviousContainer(container, skippedBlockEl);
         if (container.nodeType === ice.dom.TEXT_NODE) {
           return container;
@@ -6599,6 +6617,7 @@ if (!('filter' in Array.prototype)) {
       };
 
       rangy.rangePrototype.getFirstSelectableChild = function (element) {
+				debugger;
         if (element) {
           if (element.nodeType !== ice.dom.TEXT_NODE) {
             var child = element.firstChild;
@@ -6626,6 +6645,7 @@ if (!('filter' in Array.prototype)) {
       };
 
       rangy.rangePrototype.getLastSelectableChild = function (element) {
+				debugger;
         if (element) {
           if (element.nodeType !== ice.dom.TEXT_NODE) {
             var child = element.lastChild;
@@ -6653,6 +6673,7 @@ if (!('filter' in Array.prototype)) {
       };
 
       rangy.rangePrototype.isSelectable = function (container) {
+				debugger;
         if (container && container.nodeType === ice.dom.TEXT_NODE && container.data.length !== 0) {
           return true;
         }
@@ -6660,6 +6681,7 @@ if (!('filter' in Array.prototype)) {
       };
 
       rangy.rangePrototype.getHTMLContents = function (clonedSelection) {
+				debugger;
         if (!clonedSelection) {
           clonedSelection = this.cloneContents();
         }
@@ -6669,6 +6691,7 @@ if (!('filter' in Array.prototype)) {
       };
 
       rangy.rangePrototype.getHTMLContentsObj = function () {
+				debugger;
         return this.cloneContents();
       };
     }
@@ -6679,12 +6702,12 @@ if (!('filter' in Array.prototype)) {
 }).call(this.ice);
 
 (function() {
-	debugger;
+	
 
 var exports = this;
 
 var IcePlugin = function(ice_instance) {
-	debugger;
+	
   this._ice = ice_instance;
 };
 
@@ -6721,7 +6744,7 @@ exports.IcePlugin = IcePlugin;
 }).call(this.ice);
 
 (function() {
-	debugger;
+	
 
 var exports = this;
 

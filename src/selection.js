@@ -1,5 +1,5 @@
 (function () {
-	debugger;
+	
 
   var exports = this,
     Selection;
@@ -18,6 +18,7 @@
      * Returns the selection object for the current browser.
      */
     _getSelection: function () {
+			debugger;
       if (this._selection) {
 		  this._selection.refresh();
 	  }
@@ -34,6 +35,7 @@
      * Creates a range object.
      */
     createRange: function () {
+			debugger;
       return rangy.createRange(this.env.document);
     },
 
@@ -43,6 +45,7 @@
      * position 0 will be the only allocation filled.
      */
     getRangeAt: function (pos) {
+			debugger;
       this._selection.refresh();
       try {
         return this._selection.getRangeAt(pos);
@@ -57,6 +60,7 @@
      * a single range, so the previous range gets evicted.
      */
     addRange: function (range) {
+			debugger;
       this._selection || (this._selection = this._getSelection());
       this._selection.setSingleRange(range);
       this._selection.ranges = [range];
@@ -67,6 +71,7 @@
      * Initialize and extend the `rangy` library with some custom functionality.
      */
     _initializeRangeLibrary: function () {
+			debugger;
       var self = this;
 
       rangy.init();
@@ -98,6 +103,7 @@
        * number of `units`. Defaults to `CHARACTER_UNIT` and units of 1.
        */
       rangy.rangePrototype.moveStart = function (unitType, units) {
+				debugger;
         move(this, unitType, units, true);
       };
 
@@ -106,6 +112,7 @@
        * number of `units`.
        */
       rangy.rangePrototype.moveEnd = function (unitType, units) {
+				debugger;
         move(this, unitType, units, false);
       };
 
@@ -114,6 +121,7 @@
        * to the given `container` with `offset` units.
        */
       rangy.rangePrototype.setRange = function (start, container, offset) {
+				debugger;
         if (start) {
           this.setStart(container, offset);
         } else {
@@ -164,6 +172,7 @@
        * <p><TEXT>some </TEXT><SPAN>test</SPAN><TEXT> text</TEXT></p>
        */
       rangy.rangePrototype.moveCharLeft = function (moveStart, units) {
+				debugger;
         var container, offset;
 
         if (moveStart) {
@@ -259,6 +268,7 @@
        * <p><TEXT>some </TEXT><SPAN>test</SPAN><TEXT> text</TEXT></p>
        */
       rangy.rangePrototype.moveCharRight = function (moveStart, units) {
+				debugger;
         var container, offset;
 
         if (moveStart) {
@@ -313,6 +323,7 @@
        * the the container's firstChild is returned.
        */
       rangy.rangePrototype.getNextContainer = function (container, skippedBlockElem) {
+				debugger;
         if (!container) {
           return null;
         }
@@ -359,6 +370,7 @@
        * then the container's lastChild is returned.
        */
       rangy.rangePrototype.getPreviousContainer = function (container, skippedBlockElem) {
+				debugger;
         if (!container) {
           return null;
         }
@@ -403,6 +415,7 @@
       };
 
       rangy.rangePrototype.getNextTextNode = function (container) {
+				debugger;
         if (container.nodeType === ice.dom.ELEMENT_NODE) {
           if (container.childNodes.length !== 0) {
             return this.getFirstSelectableChild(container);
@@ -418,6 +431,7 @@
       };
 
       rangy.rangePrototype.getPreviousTextNode = function (container, skippedBlockEl) {
+				debugger;
         container = this.getPreviousContainer(container, skippedBlockEl);
         if (container.nodeType === ice.dom.TEXT_NODE) {
           return container;
@@ -427,6 +441,7 @@
       };
 
       rangy.rangePrototype.getFirstSelectableChild = function (element) {
+				debugger;
         if (element) {
           if (element.nodeType !== ice.dom.TEXT_NODE) {
             var child = element.firstChild;
@@ -454,6 +469,7 @@
       };
 
       rangy.rangePrototype.getLastSelectableChild = function (element) {
+				debugger;
         if (element) {
           if (element.nodeType !== ice.dom.TEXT_NODE) {
             var child = element.lastChild;
@@ -481,6 +497,7 @@
       };
 
       rangy.rangePrototype.isSelectable = function (container) {
+				debugger;
         if (container && container.nodeType === ice.dom.TEXT_NODE && container.data.length !== 0) {
           return true;
         }
@@ -488,6 +505,7 @@
       };
 
       rangy.rangePrototype.getHTMLContents = function (clonedSelection) {
+				debugger;
         if (!clonedSelection) {
           clonedSelection = this.cloneContents();
         }
@@ -497,6 +515,7 @@
       };
 
       rangy.rangePrototype.getHTMLContentsObj = function () {
+				debugger;
         return this.cloneContents();
       };
     }

@@ -1,5 +1,5 @@
 (function() {
-	debugger;
+	
 
 var exports = this;
 

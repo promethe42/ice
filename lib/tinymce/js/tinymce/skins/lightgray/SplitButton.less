@@ -1,23 +1,49 @@
 // SplitButton
 
-.mce-splitbtn .mce-open {
+.@{prefix}-splitbtn .@{prefix}-open {
 	border-left: 1px solid transparent;
-	border-right: 1px solid transparent;
 }
 
-.mce-splitbtn:hover .mce-open {
-	border-left-color: @btn-border-color;
-	border-right-color: @btn-border-color;
+.@{prefix}-splitbtn:hover .@{prefix}-open {
+	border-left-color: darken(@btn-bg, 20%);
 }
 
-.mce-splitbtn button {
+.@{prefix}-splitbtn button when (@has-button-borders = false) {
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+.@{prefix}-splitbtn button when (@has-button-borders = true) {
 	padding-right: 4px;
+	padding-left: 8px;
 }
 
-.mce-splitbtn .mce-open {
+.@{prefix}-splitbtn .@{prefix}-open {
+	padding-right: 4px;
 	padding-left: 4px;
 }
 
-.mce-splitbtn .mce-open.mce-active {
-	.box-shadow(inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0 ,.05));
+.@{prefix}-splitbtn .@{prefix}-open.@{prefix}-active {
+	.vertical-gradient(darken(@btn-bg, 10%), darken(@btn-bg-hlight, 5%));
+	outline: 1px solid darken(@btn-bg, 20%);
+}
+
+.@{prefix}-splitbtn.@{prefix}-btn-small .@{prefix}-open {
+	padding: 0 3px 0 3px;
+}
+
+// RTL
+
+.@{prefix}-rtl .@{prefix}-splitbtn {
+	direction: rtl;
+	text-align: right;
+}
+
+.@{prefix}-rtl .@{prefix}-splitbtn button {
+	padding-right: 4px;
+	padding-left: 4px;
+}
+
+.@{prefix}-rtl .@{prefix}-splitbtn .@{prefix}-open {
+	border-left: 0;
 }

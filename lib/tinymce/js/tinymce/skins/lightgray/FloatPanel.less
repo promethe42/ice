@@ -1,14 +1,18 @@
 ﻿// FloatPanel
 
-.mce-floatpanel {
+.@{prefix}-floatpanel {
 	position: absolute;
-	.box-shadow(#ccc 5px 5px 5px);
+	.box-shadow(@floatpanel-box-shadow);
+}
+
+.@{prefix}-floatpanel.@{prefix}-fixed {
+	position: fixed;
 }
 
 // Popover panel
 
-.mce-floatpanel .mce-arrow,
-.mce-floatpanel .mce-arrow:after {
+.@{prefix}-floatpanel .@{prefix}-arrow,
+.@{prefix}-floatpanel .@{prefix}-arrow:after {
 	position: absolute;
 	display: block;
 	width: 0;
@@ -17,51 +21,49 @@
 	border-style: solid;
 }
 
-.mce-floatpanel .mce-arrow {
+.@{prefix}-floatpanel .@{prefix}-arrow {
 	border-width: @popover-arrow-outer-width;
 }
 
-.mce-floatpanel .mce-arrow:after {
+.@{prefix}-floatpanel .@{prefix}-arrow:after {
 	border-width: @popover-arrow-width;
 	content: "";
 }
 
-.mce-floatpanel.mce-popover {
-	position: absolute;
+.@{prefix}-floatpanel.@{prefix}-popover {
+	.reset-gradient();
+	.border-radius(6px);
+	.box-shadow(@floatpanel-box-shadow);
 	top: 0;
 	left: 0;
-	background: @popover-background;
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding;
-	background-clip: padding-box;
-	border: 1px solid #ccc;
-	border: 1px solid rgba(0,0,0,.2);
-	.border-radius(6px);
-	.box-shadow(0 5px 10px rgba(0,0,0,.2));
+	background: @popover-bg;
+	border: 1px solid @panel-border;
+	border: 1px solid @popover-arrow-outer;
 
-	&.mce-bottom {
-		margin-top: 10px;
+	&.@{prefix}-bottom {
+		margin-top: @popover-arrow-width;
+		*margin-top: 0;
 
-		& > .mce-arrow {
+		& > .@{prefix}-arrow {
 			left: 50%;
 			margin-left: -@popover-arrow-outer-width;
 			border-top-width: 0;
-			border-bottom-color: #999; // IE8 fallback
-			border-bottom-color: @popover-arrow-outer-color;
+			border-bottom-color: @panel-border;
+			border-bottom-color: @popover-arrow-outer;
 			top: -@popover-arrow-outer-width;
 
 			&:after {
 				top: 1px;
 				margin-left: -@popover-arrow-width;
 				border-top-width: 0;
-				border-bottom-color: @popover-arrow-color;
+				border-bottom-color: @popover-arrow;
 			}
 		}
 
-		&.mce-start { margin-left: -22px; }
-		&.mce-start > .mce-arrow { left: 20px; }
+		&.@{prefix}-start { margin-left: -22px; }
+		&.@{prefix}-start > .@{prefix}-arrow { left: 20px; }
 
-		&.mce-end { margin-left: 22px; }
-		&.mce-end > .mce-arrow { right: 10px; left: auto; }
+		&.@{prefix}-end { margin-left: 22px; }
+		&.@{prefix}-end > .@{prefix}-arrow { right: 10px; left: auto; }
 	}
 }

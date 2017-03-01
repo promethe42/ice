@@ -1,54 +1,62 @@
 // Tooltip
 
-.mce-tooltip {
+.@{prefix}-tooltip {
 	position: absolute;
 	padding: 5px;
 	.opacity(0.8);
 }
 
-.mce-tooltip-inner {
-	font-size: 11px;
-	background-color: @tooltip-background;
-	color: @tooltip-text-color;
+.@{prefix}-tooltip-inner {
+	font-size: @tooltip-font-size;
+	background-color: @tooltip-bg;
+	color: @tooltip-text;
 	max-width: 200px;
 	padding: 5px 8px 4px 8px;
 	text-align: center;
 	white-space: normal;
 }
 
-.mce-tooltip-inner {
+.@{prefix}-tooltip-inner {
 	.border-radius(3px);
 }
 
-.mce-tooltip-inner {
-	.box-shadow(0 0 5px @tooltip-background);
+.@{prefix}-tooltip-inner {
+	.box-shadow(0 0 5px @tooltip-bg);
 }
 
-.mce-tooltip-arrow {
+.@{prefix}-tooltip-arrow {
 	position: absolute;
 	width: 0;
 	height: 0;
 	line-height: 0;
-	border: 5px dashed @tooltip-background;
+	border: 5px dashed @tooltip-bg;
 }
 
-.mce-tooltip-arrow-n {
-	border-bottom-color: @tooltip-background;
+.@{prefix}-tooltip-arrow-n {
+	border-bottom-color: @tooltip-bg;
 }
 
-.mce-tooltip-arrow-s {
-	border-top-color: @tooltip-background;
+.@{prefix}-tooltip-arrow-s {
+	border-top-color: @tooltip-bg;
 }
 
-.mce-tooltip-arrow-e {
-	border-left-color: @tooltip-background;
+.@{prefix}-tooltip-arrow-e {
+	border-left-color: @tooltip-bg;
 }
 
-.mce-tooltip-arrow-w {
-	border-right-color: @tooltip-background;
+.@{prefix}-tooltip-arrow-w {
+	border-right-color: @tooltip-bg;
 }
 
-.mce-tooltip-n .mce-tooltip-arrow {
+.@{prefix}-tooltip-nw, .@{prefix}-tooltip-sw {
+	margin-left: -14px;
+}
+
+.@{prefix}-tooltip-ne, .@{prefix}-tooltip-se {
+	margin-left: 14px;
+}
+
+.@{prefix}-tooltip-n .@{prefix}-tooltip-arrow {
 	top: 0px;
 	left: 50%;
 	margin-left: -5px;
@@ -58,7 +66,7 @@
 	border-right-color: transparent;
 }
 
-.mce-tooltip-nw .mce-tooltip-arrow {
+.@{prefix}-tooltip-nw .@{prefix}-tooltip-arrow {
 	top: 0;
 	left: 10px;
 	border-bottom-style: solid;
@@ -67,7 +75,7 @@
 	border-right-color: transparent;
 }
 
-.mce-tooltip-ne .mce-tooltip-arrow {
+.@{prefix}-tooltip-ne .@{prefix}-tooltip-arrow {
 	top: 0;
 	right: 10px;
 	border-bottom-style: solid;
@@ -76,7 +84,7 @@
 	border-right-color: transparent;
 }
 
-.mce-tooltip-s .mce-tooltip-arrow {
+.@{prefix}-tooltip-s .@{prefix}-tooltip-arrow {
 	bottom: 0;
 	left: 50%;
 	margin-left: -5px;
@@ -86,7 +94,7 @@
 	border-right-color: transparent;
 }
 
-.mce-tooltip-sw .mce-tooltip-arrow {
+.@{prefix}-tooltip-sw .@{prefix}-tooltip-arrow {
 	bottom: 0;
 	left: 10px;
 	border-top-style: solid;
@@ -95,7 +103,7 @@
 	border-right-color: transparent;
 }
 
-.mce-tooltip-se .mce-tooltip-arrow {
+.@{prefix}-tooltip-se .@{prefix}-tooltip-arrow {
 	bottom: 0;
 	right: 10px;
 	border-top-style: solid;
@@ -104,7 +112,7 @@
 	border-right-color: transparent;
 }
 
-.mce-tooltip-e .mce-tooltip-arrow {
+.@{prefix}-tooltip-e .@{prefix}-tooltip-arrow {
 	right: 0;
 	top: 50%;
 	margin-top: -5px;
@@ -114,7 +122,7 @@
 	border-bottom-color: transparent;
 }
 
-.mce-tooltip-w .mce-tooltip-arrow {
+.@{prefix}-tooltip-w .@{prefix}-tooltip-arrow {
 	left: 0;
 	top: 50%;
 	margin-top: -5px;
@@ -123,13 +131,3 @@
 	border-top-color: transparent;
 	border-bottom-color: transparent;
 }
-
-// Invalid field tooltip
-/*
-.mce-tooltip-inner { background: #aa0000; }
-.mce-tooltip-arrow-n { border-bottom-color: #aa0000; }
-.mce-tooltip-arrow-s { border-top-color: #aa0000; }
-.mce-tooltip-arrow-e { border-left-color: #aa0000; }
-.mce-tooltip-arrow-w { border-right-color: #aa0000; }
-.mce-tooltip-arrow { border: 5px dashed #aa0000; }
-*/

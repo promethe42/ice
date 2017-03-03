@@ -110,8 +110,6 @@
 			 * range, and editor.
 			 */
 			startTracking: function () {
-				this.element.setAttribute('contentEditable', this.contentEditable);
-
 				// If we are handling events setup the delegate to handle various events on `this.element`.
 				if (this.handleEvents) {
 					var self = this;
@@ -133,8 +131,6 @@
 			 * Removes contenteditability and stops event handling.
 			 */
 			stopTracking: function () {
-				this.element.setAttribute('contentEditable', !this.contentEditable);
-
 				// If we are handling events setup the delegate to handle various events on `this.element`.
 				if (this.handleEvents) {
 					var self = this;
@@ -304,7 +300,6 @@
 			 * is used. If the range is in a parent delete node, then the range is positioned after the delete.
 			 */
 			insert: function (node, range) {
-				debugger;
 				// If the node is not defined, then we need to insert an
 				// invisible space and force propagation to the browser.
 				var isPropagating = !node;
@@ -349,7 +344,6 @@
 			 * original delete node is stored.
 			 */
 			placeholdDeletes: function () {
-				debugger;
 				var self = this;
 				if (this.isPlaceholdingDeletes) {
 					this.revertDeletePlaceholders();
@@ -374,7 +368,6 @@
 			 * original delete node is stored.
 			 */
 			revertDeletePlaceholders: function () {
-				debugger;
 				var self = this;
 				if (!this.isPlaceholdingDeletes) {
 					return false;
@@ -393,7 +386,6 @@
 			 * @return true if deletion was handled.
 			 */
 			deleteContents: function (right, range) {
-				debugger;
 				var prevent = true;
 				var browser = ice.dom.browser();
 
@@ -515,7 +507,6 @@
 			 * [changeid] => {`type`, `time`, `userid`, `username`}
 			 */
 			getChanges: function () {
-				debugger;
 				return this._changes;
 			},
 
@@ -697,7 +688,6 @@
 			 * void elements.
 			 */
 			_moveRangeToValidTrackingPos: function (range) {
-				debugger;
 				var onEdge = false;
 				var voidEl = this._getVoidElement(range.endContainer);
 				while (voidEl) {

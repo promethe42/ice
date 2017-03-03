@@ -3382,8 +3382,6 @@ if (!('filter' in Array.prototype)) {
 			 * range, and editor.
 			 */
 			startTracking: function () {
-				this.element.setAttribute('contentEditable', this.contentEditable);
-
 				// If we are handling events setup the delegate to handle various events on `this.element`.
 				if (this.handleEvents) {
 					var self = this;
@@ -3405,8 +3403,6 @@ if (!('filter' in Array.prototype)) {
 			 * Removes contenteditability and stops event handling.
 			 */
 			stopTracking: function () {
-				this.element.setAttribute('contentEditable', !this.contentEditable);
-
 				// If we are handling events setup the delegate to handle various events on `this.element`.
 				if (this.handleEvents) {
 					var self = this;

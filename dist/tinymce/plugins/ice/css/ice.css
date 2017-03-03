@@ -17,64 +17,11 @@
 }
 
 .ins {
-/*
 	background-color: #e5ffcd;
-*/
 }
 
 .del {
 	text-decoration: line-through;
-/*
 	color: #555;
 	background-color: #e8e8e8;
-*/
 }
-
-.cts-1 {
-    color: #4990E2;
-}
-
-.cts-2{
-    color: #BD0FE1;
-}
-
-.cts-3{
-    color: #F6A623;
-}
-
-.cts-4{
-    color: #1F9466;
-}
-
-.cts-5{
-    color: #FF146B;
-}
-
-.cts-6{
-    color: #50E3C2;
-}
-
-.cts-7{
-    color: #FF5747;
-}
-
-.cts-8{
-    color: #D0011B;
-}
-
-.cts-9{
-    color: #73B12F;
-}
-
-.cts-10{
-    color: #03BFDB;
-}
-
-.cts-11{
-    color: #A93434;
-}
-
-.cts-12{
-    color: #657732;
-}
-

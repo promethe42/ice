@@ -1,5 +1,5 @@
 {
-  "name": "ice",
+  "name": "nytimes-ice",
   "description": "Track changes in JavaScript.",
   "version": "0.6.0",
   "main": "dist/index.js",

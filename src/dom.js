@@ -1,5 +1,5 @@
 (function () {
-	
+
   var exports = this,
 		_browser = null,
     dom = {};
@@ -49,8 +49,7 @@
     if (!startElement) {
       startElement = document;
     }
-    element = startElement.getElementById(id);
-    return element;
+    return startElement.getElementById(id);
   };
   dom.getTag = function (tagName, startElement) {
     if (!startElement) {
@@ -186,7 +185,7 @@
       } catch(e){}
 
       // Handling jQuery bug (which may be fixed in the official release later)
-      // http://bugs.jquery.com/ticket/13401 
+      // http://bugs.jquery.com/ticket/13401
       if(ret.length === 0){
         $this.remove();
       }
@@ -298,7 +297,7 @@
     try {
       while (el && el.parentNode) {
         if (el.parentNode && el.parentNode.tagName) {
-          tagName = el.parentNode.tagName.toLowerCase();
+          var tagName = el.parentNode.tagName.toLowerCase();
           for (var i = 0; i < names.length; i++) {
             if (tagName === names[i]) {
               return el.parentNode;
@@ -618,7 +617,7 @@
     }
     var above = function () {};
     if (dom.isset(parent) === true) {
-      for (value in parent.prototype) {
+      for (var value in parent.prototype) {
         if (child.prototype[value]) {
           above.prototype[value] = parent.prototype[value];
           continue;
@@ -757,24 +756,24 @@
 		if (_browser) {
       return $.extend({}, _browser);
     }
-		
+
     _browser = (function() {
       function uaMatch( ua ) {
         ua = ua.toLowerCase();
-	
+
         var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
           /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
           /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
           /(msie) ([\w.]+)/.exec( ua ) ||
           ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
           [];
-	
+
 	return {
           browser: match[ 1 ] || "",
           version: match[ 2 ] || "0"
         };
       }
-	
+
       var ua = navigator.userAgent.toLowerCase(),
           matched = uaMatch(ua),
           browser = {
@@ -782,13 +781,13 @@
             version : 0,
             msie: false
           };
-	
+
       if ( matched.browser ) {
         browser[ matched.browser ] = true;
         browser.version = matched.version || 0;
         browser.type = matched.browser;
       }
-	
+
       // Chrome is Webkit, but Webkit is also Safari.
       if ( browser.chrome ) {
         browser.webkit = true;
@@ -800,12 +799,12 @@
       }
       browser.firefox = (/firefox/.test(ua) == true);
       if (! browser.msie) {
-        browser.msie = !! /trident/.test(ua); 
+        browser.msie = !! /trident/.test(ua);
       }
-			
+
       return browser;
     })();
-    
+
     return $.extend({}, _browser);
   };
   dom.getBrowserType = function () {
@@ -938,7 +937,7 @@
           if (r < 10) r = '0' + r;
           break;
         case 'M':
-          months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+          var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
           r = months[date.getMonth()];
           if (f === 'M') {
             r = r.substring(0, 3);

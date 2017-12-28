@@ -2,29 +2,41 @@
   "name": "ice",
   "description": "Track changes in JavaScript.",
   "version": "0.5.0",
-  "author": "Matthew DeLambo <delambo@gmail.com>",
+  "main": "dist/index.js",
+  "author": [
+    "Matthew DeLambo <delambo@gmail.com>",
+    "Jean-Marc Le Roux <jeanmarc.leroux@gmail.com>"
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/nytimes/ice"
+    "url": "git://github.com/promethe42/ice"
   },
   "devDependencies": {
-    "grunt-contrib": "~0.4.0",
+    "exports-loader": "^0.6.4",
     "grunt": "~0.4.0",
+    "grunt-contrib": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-compress": "~0.5.2",
     "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-connect": "~0.2.0",
     "grunt-contrib-jshint": "~0.2.0",
     "grunt-contrib-qunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-compress": "~0.5.2",
-    "grunt-contrib-connect": "~0.2.0"
+    "imports-loader": "^0.7.1",
+    "jquery": "^3.2.1",
+    "rangy": "^1.3.0",
+    "webpack": "^3.10.0"
   },
   "bugs": {
-    "url": "http://github.com/nytimes/ice/issues"
+    "url": "http://github.com/promethe42/ice/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/nytimes/ice/blob/master/LICENSE"
+      "url": "https://github.com/promethe42/ice/blob/master/LICENSE"
     }
-  ]
+  ],
+  "scripts": {
+    "build": "webpack"
+  }
 }

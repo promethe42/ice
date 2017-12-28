@@ -4,7 +4,7 @@ var exports = this;
 
 /**
  * When active, this plugin will convert two successively typed dashes, within
- * the ice block element, into an emdash. 
+ * the ice block element, into an emdash.
  */
 var IceEmdashPlugin = function(ice_instance) {
 	this._ice = ice_instance;
@@ -24,7 +24,7 @@ IceEmdashPlugin.prototype = {
 		}
 		return true;
 	},
-	
+
 	convertEmdash: function(e) {
 		var range = this._ice.getCurrentRange();
 		if(range.collapsed) {
@@ -37,7 +37,7 @@ IceEmdashPlugin.prototype = {
 				// Make sure that the start and end containers aren't in different blocks, or that the start isn't in a delete.
 				if(startBlock === endBlock && !this._ice.getIceNode(range.startContainer, 'deleteType')) {
 					// Get the last character and check to see if it is a dash.
-					c = range.toHtml();
+					var c = range.toHtml();
 					if(c === '-') {
 						// Extract the last character/dash and insert an emdash
 						range.extractContents();

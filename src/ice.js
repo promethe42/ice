@@ -3,6 +3,8 @@
 	var exports = this,
 		defaults, InlineChangeEditor;
 
+    var ice = exports.ice = this.ice || {};
+
 		defaults = {
 			// ice node attribute names:
 			changeIdAttribute: 'data-cid',
@@ -679,7 +681,7 @@
 			isInsideChange: function (node) {
 				var selector = '.' + this._getIceNodeClass('insertType') + ', .' + this._getIceNodeClass('deleteType');
 				if (!node) {
-					range = this.getCurrentRange();
+					var range = this.getCurrentRange();
 					if (!range.collapsed) return false;
 					else node = range.startContainer;
 				}
@@ -1000,7 +1002,7 @@
 								ice.dom.remove(elem);
 							}
 
-							for (j = 0; j < elem.childNodes.length; j++) {
+							for (var j = 0; j < elem.childNodes.length; j++) {
 								var child = elem.childNodes[j];
 								elements.push(child);
 							}
@@ -1711,7 +1713,6 @@
 			}
 		};
 
-		exports.ice = this.ice || {};
 		exports.ice.InlineChangeEditor = InlineChangeEditor;
 
 }).call(this);

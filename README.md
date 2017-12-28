@@ -6,9 +6,11 @@ Ice is a track changes implementation, built in javascript, for anything that is
 
 [Try it](http://NYTimes.github.com/ice/demo/)
 
-## Download
+## Install
 
-[v0.5.0](http://nytimes.github.com/ice/downloads/ice_0.5.0.zip)
+```
+npm install --save nytimes-ice
+```
 
 ## Features
 
@@ -60,7 +62,7 @@ Additional options:
 ***
 
 **_Useful utilities in the API:_**
-     
+
 **acceptChange, rejectChange**
 ```javascript
      // Accept/Reject the change at the current range/cursor position or at the given `optionalNode`
@@ -121,7 +123,12 @@ Additional options:
 
 ### Master
 
-- Fixes bug where Webkit browsers were throwing errors when the letter "v" was pressed. 
+- Fixes bug where Webkit browsers were throwing errors when the letter "v" was pressed.
+
+### 0.6.2
+
+- Build as a library with Webpack
+- Release as an [NPM package](https://www.npmjs.com/package/nytimes-ice)
 
 ### 0.5.0
 
